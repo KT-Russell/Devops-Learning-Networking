@@ -8,7 +8,7 @@ By the end, your site will be live at your custom domain — powered by AWS and 
 --- 
  
 
-##Step 1 — Buy a Domain on Cloudflare 
+## Step 1 — Buy a Domain on Cloudflare 
 ---
 
 Go to Cloudflare Registrar. 
@@ -24,7 +24,7 @@ After purchase, Cloudflare automatically manages your DNS — no extra setup yet
 --- 
  
 
-##Step 2 — Launch an EC2 Instance 
+## Step 2 — Launch an EC2 Instance 
 ---
 
 Go to the AWS EC2 console. 
@@ -57,7 +57,7 @@ Go to your instance → Instance Summary → Copy the Public IPv4 Address (you�
  
 --- 
 
-##Step 3 — Connect to the EC2 Instance via SSH 
+## Step 3 — Connect to the EC2 Instance via SSH 
 ---
 
 Replace the placeholders below with your key path and EC2 public IP: 
@@ -67,7 +67,7 @@ Replace the placeholders below with your key path and EC2 public IP:
 --- 
  
 
-##Step 4 — Install & Start NGINX on EC2 
+## Step 4 — Install & Start NGINX on EC2 
 ---
 
 Run the following commands after SSH-ing in: 
@@ -87,7 +87,7 @@ Open http://<YOUR_EC2_PUBLIC_IP> in your browser — you should see the NGINX we
 
 --- 
 
-##Step 5 — Point Your Domain to the EC2 IP (Cloudflare) 
+## Step 5 — Point Your Domain to the EC2 IP (Cloudflare) 
 ---
 
 Go to Cloudflare → Your Domain → DNS → Add record. 
@@ -108,7 +108,7 @@ Save.
 
 --- 
  
-##Step 6 — Confirm DNS is Live 
+## Step 6 — Confirm DNS is Live 
 ---
 
 From your local machine: 
@@ -128,15 +128,15 @@ Visit http://(your.domain) — the default NGINX page should now appear.
  
 --- 
 
-##🎉 Milestone Reached 
---
+## 🎉 Milestone Reached 
+
 
 Your NGINX web server is live on EC2 and mapped to your custom domain. 
 
 --- 
  
 
-##🛠 Extra — Replace the Default Page with a Custom One 
+## 🛠 Extra — Replace the Default Page with a Custom One 
 ---
  
 Goal: Replace NGINX’s default page with a custom HTML landing page. 
@@ -149,23 +149,25 @@ Navigate to the web root and back up the default file:
 
 ---
  
-Edit the page: 
-
+## Edit the page: 
+---
 
 `sudo nano index.html`  
 
  
-Delete the default content, paste in your own HTML code for your web pages UI,save (CTRL+O, Enter) and exit (CTRL+X). 
+Delete the default content, paste in your own HTML code.
+
+Save (CTRL+O, Enter) and exit (CTRL+X). 
 
 --- 
 
-##Reload NGINX and test: 
+## Reload NGINX and test: 
 ---
  
 `sudo systemctl reload nginx ` 
 
 
-Visit your domain — you should now see your custom landing page. 
+Visit your domain — you should now see your custom landing page: 
 
 <p align="center">
   <img src="./nginx-diagram.png" alt="NGINX + EC2 Architecture" width="600">
@@ -175,9 +177,9 @@ Visit your domain — you should now see your custom landing page.
 ---
 If the old page still appears: 
 
-Hard-refresh (Cmd/Ctrl + Shift + R) 
+Hard-refresh `Cmd/Ctrl + Shift + R` 
 
 If using Cloudflare proxy, set to DNS only or purge cache.  
 
-
+Then refresh and try again! 
 
