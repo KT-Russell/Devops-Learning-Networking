@@ -49,9 +49,6 @@ Handles encryption (TLS/SSL), compression, and encoding.
 The layer closest to the end-user — web apps, APIs, email, and more.  
 Issues here often appear as “the app isn’t working,” even if the cause is lower in the stack.
 
----
-
-## 📂 Folder Structure
 
 ---
 
